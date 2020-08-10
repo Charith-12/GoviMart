@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+
+    </group>
+
+    <item android:title="Products">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_adds"
+                    android:icon="@drawable/advertistment"
+                    android:title="My Advertisements" />
+
+                <item
+                    android:id="@+id/nav_bookmarks"
+                    android:icon="@drawable/bookmarkes"
+                    android:title="Bookmarks" />
+                <item
+                    android:id="@+id/nav_history"
+                    android:icon="@drawable/history"
+                    android:title="History" />
+                <item
+                    android:id="@+id/nav_track"
+                    android:icon="@drawable/location"
+                    android:title="Track" />
+            </group>
+
+        </menu>
+
+    </item>
+
+
+    <item android:title="Profile">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_myDetails"
+                    android:icon="@drawable/my_profile"
+                    android:title="My Details" />
+                <item
+                    android:id="@+id/nav_followers"
+                    android:icon="@drawable/my_followers"
+                    android:title="Followers" />
+                <item
+                    android:id="@+id/nav_feedback"
+                    android:icon="@drawable/feedback"
+                    android:title="feedback" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/log_out"
+                    android:title="Log Out" />
+            </group>
+
+        </menu>
+
+    </item>
+
+
+</menu>

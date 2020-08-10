@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">GoviMart</string>
+    <string-array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="Role">
+        <item>Seller and Buyer</item>
+        <item>Buyer</item>
+        <item>Transporter</item>
+        <item>Seller and Transporter</item>
+        <item>Buyer and Transporter</item>
+    </string-array>
+
+    <string-array name="Grades">
+        <item>Export</item>
+        <item>Supermarket</item>
+        <item>Local market</item>
+        <item>Off grade</item>
+        <item>Mix grade</item>
+    </string-array>
+
+    <string-array name="Districts">
+        <item>Colombo</item>
+        <item>Gampaha</item>
+        <item>Kalutara</item>
+        <item>Galle</item>
+        <item>Matara</item>
+        <item>Hambantota</item>
+        <item>Matale</item>
+        <item>Kandy</item>
+        <item>Nuwara Eliya</item>
+        <item>Badulla</item>
+        <item>Monaragala</item>
+        <item>Kegalle</item>
+        <item>Ratnapura</item>
+        <item>Kurunegala</item>
+        <item>Anuradhapura</item>
+        <item>Polonnaruwa</item>
+        <item>Puttalam</item>
+        <item>Trincomalee</item>
+        <item>Batticaloa</item>
+        <item>Ampara</item>
+        <item>Jaffna</item>
+        <item>Kilinochchi</item>
+        <item>Mannar</item>
+        <item>Mullaitivu</item>
+        <item>Vavuniya</item>
+    </string-array>
+    <string name="navigation_drawer_open">navigation_drawer_open </string>
+    <string name="navigation_drawer_close"> navigation_drawer_close</string>
+
+    <string name="name_app">Govi Mart</string>
+    <string name="search_text">Search</string>
+
+</resources>

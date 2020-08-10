@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".BuyerMainActivityHome"
+    tools:openDrawer="start">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:theme="@style/AppTheme"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_Main"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:navigationIcon="@drawable/menu"
+            app:title="@string/name_app"
+            app:titleTextColor="@color/colorPrimary"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="47dp" />
+
+        <RelativeLayout
+            android:id="@+id/topNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorFourth"
+            android:elevation="8dp">
+
+
+            <TextView
+                android:id="@+id/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/name_app"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="28sp" />
+
+            <com.ismaeldivita.chipnavigation.ChipNavigationBar
+                android:id="@+id/nav_ChipTopNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="8dp"
+                android:theme="@style/AppTheme_Menu"
+                app:cnb_iconSize="24dp"
+                app:cnb_menuResource="@menu/top_navigation"
+                app:cnb_orientationMode="horizontal"
+                app:cnb_unselectedColor="@color/colorThird">
+
+            </com.ismaeldivita.chipnavigation.ChipNavigationBar>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+
+            <RelativeLayout
+                android:id="@+id/sch_SearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_corners"
+                android:elevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/search_text" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/search" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shadow">
+
+            <FrameLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/nav_ChipBottomNavigation"></FrameLayout>
+
+            <!--            <FrameLayout
+                            android:id="@+id/bottom_navigation_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/Transparent"
+                            android:orientation="vertical">-->
+
+            <com.ismaeldivita.chipnavigation.ChipNavigationBar
+                android:id="@+id/nav_ChipBottomNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@color/white"
+                android:elevation="8dp"
+                android:theme="@style/AppTheme_Menu"
+                app:cnb_menuResource="@menu/bottom_navigation_buyer"
+                app:cnb_orientationMode="horizontal"
+                app:cnb_unselectedColor="@color/colorThird">
+
+            </com.ismaeldivita.chipnavigation.ChipNavigationBar>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

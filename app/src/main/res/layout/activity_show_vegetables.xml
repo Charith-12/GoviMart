@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_category_title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@color/colorPrimary"
+            android:fontFamily="sans-serif-medium"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Vegetables"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/search_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tv_category_title_bar">
+
+            <EditText
+                android:id="@+id/et_searchBox"
+                style="@android:style/Widget.EditText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:autofillHints=""
+                android:background="@color/design_default_color_background"
+                android:ems="10"
+                android:hint="Type here to Search"
+                android:inputType="textPersonName"
+                android:textAlignment="viewEnd" />
+
+
+            <SearchView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".4" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider_vegetables"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/search_section"
+            android:background="?android:attr/listDivider" />
+
+        <ProgressBar
+            android:id="@+id/progress_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vegetablesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/design_default_color_on_primary"
+            android:padding="10dp"
+            android:scrollbars="vertical"
+            android:layout_below="@id/divider_vegetables"/>
+
+    </RelativeLayout>
+</RelativeLayout>

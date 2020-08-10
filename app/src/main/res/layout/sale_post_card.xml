@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="8dp"
+    android:layout_margin="4dp"
+    android:clickable="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp">
+
+        <TextView
+            android:id="@+id/tv_post_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_post_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category :" />
+
+        <TextView
+            android:id="@+id/tv_post_district"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="District :" />
+
+        <TextView
+            android:id="@+id/tv_post_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location :" />
+
+        <TextView
+            android:id="@+id/tv_post_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price (Rs./kg): " />
+
+        <TextView
+            android:id="@+id/tv_post_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity (kg) :" />
+
+        <ImageView
+            android:id="@+id/iv_post_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_post_date_from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available From :" />
+
+        <TextView
+            android:id="@+id/tv_post_date_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available till :" />
+
+        <TextView
+            android:id="@+id/tv_post_date_harvested"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date Harvested :" />
+
+        <TextView
+            android:id="@+id/tv_post_grade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Grade :" />
+
+        <TextView
+            android:id="@+id/tv_post_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/tv_post_owner_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Owner name :" />
+
+        <TextView
+            android:id="@+id/tv_post_owner_mobile_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact number :" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

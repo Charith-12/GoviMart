@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "751562710295",
+    "firebase_url": "https://govi-mart-app.firebaseio.com",
+    "project_id": "govi-mart-app",
+    "storage_bucket": "govi-mart-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751562710295:android:108996138711967198ab52",
+        "android_client_info": {
+          "package_name": "com.example.govimart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751562710295-ht25egokgn20879p9ec4ugq7jr4ds06b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDulRTc4lzoI6n5ZTWQiXAal3RaOgRep5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751562710295-ht25egokgn20879p9ec4ugq7jr4ds06b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

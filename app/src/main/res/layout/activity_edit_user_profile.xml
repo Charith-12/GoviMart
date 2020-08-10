@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:navigationIcon="@drawable/arrow_left"
+        app:title="Edit User Profile"
+        app:titleTextColor="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/rl_ProfilePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarEditProfile"
+        android:padding="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_ProfileImage_edit"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_launcher_background"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="5dp" />
+
+
+        <!--        <ImageView
+                    android:id="@+id/iv_ProfileImage"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@drawable/ic_launcher_background"
+                    android:scaleType="centerCrop" />-->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rl_ProfileDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_ProfilePicture"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_ProfileUserName_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableStart="@drawable/ic_baseline_account_box_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:ems="10"
+                android:hint="User Name :"
+                android:inputType="textPersonName"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelAlwaysShown="true"
+                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                app:met_floatingLabelTextSize="16sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_ProfileFirstName_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableStart="@drawable/ic_baseline_folder_shared_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:ems="10"
+                android:hint="First Name :"
+                android:inputType="textPersonName"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelAlwaysShown="true"
+                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                app:met_floatingLabelTextSize="16sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_ProfileLastName_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableStart="@drawable/ic_baseline_folder_shared_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:ems="10"
+                android:hint="Last Name :"
+                android:inputType="textPersonName"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelAlwaysShown="true"
+                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                app:met_floatingLabelTextSize="16sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_ProfileEmail_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:ems="10"
+                android:hint="Email :"
+                android:inputType="textEmailAddress"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelAlwaysShown="true"
+                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                app:met_floatingLabelTextSize="16sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_ProfileMobileNo_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:ems="10"
+                android:hint="Mobile No :"
+                android:inputType="phone"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelAlwaysShown="true"
+                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                app:met_floatingLabelTextSize="16sp"
+                app:met_maxCharacters="12" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_ProfileAddress_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableStart="@drawable/ic_baseline_home_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:ems="10"
+                android:hint="Address :"
+                android:inputType="text|textPostalAddress"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelAlwaysShown="true"
+                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                app:met_floatingLabelTextSize="16sp" />
+
+
+            -->
+        </RelativeLayout>
+
+
+        <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            &lt;!&ndash;            <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/et_ProfileGender_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:drawableStart="@drawable/ic_baseline_emoji_people_24"
+                            android:drawablePadding="10dp"
+                            android:drawableTint="@color/colorPrimary"
+                            android:ems="10"
+                            android:hint="Gender :"
+                            android:inputType="textEmailAddress"
+                            app:met_floatingLabel="highlight"
+                            app:met_floatingLabelTextSize="16sp" />&ndash;&gt;
+
+            <TextView
+                android:id="@+id/tv_ProfileGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_emoji_people_24"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:text="Gender :"
+                android:drawableTint="@color/colorPrimary"
+                android:textColor="@color/colorPrimary"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spi_Gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_ProfileGender"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:entries="@array/Gender" />
+            &lt;!&ndash;
+                        <TextView
+                            android:id="@+id/tv_ProfileUserGenderText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_ProfileGender"
+                            android:layout_marginLeft="60dp"
+                            android:text="Gender"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />&ndash;&gt;
+        </RelativeLayout>-->
+        <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_ProfileRole_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableStart="@drawable/ic_baseline_home_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:ems="10"
+                android:hint="Account_Type :"
+                android:inputType="textEmailAddress"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextSize="16sp" />
+
+            &lt;!&ndash;            <TextView
+                            android:id="@+id/tv_ProfileAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_baseline_home_24"
+                            android:drawablePadding="10dp"
+                            android:padding="10dp"
+                            android:text="Address :"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_ProfileAddressText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_ProfileAddress"
+                            android:layout_marginLeft="60dp"
+                            android:text="Address "
+                            android:textAlignment="textStart"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+                    &ndash;&gt;
+        </RelativeLayout>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btns_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_ProfileDetails"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/btn_ResetPassword"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/buttonbackground"
+            android:elevation="8dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Reset Password"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_marginBottom="10dp" />
+
+        <!--        <Button
+                    android:id="@+id/btn_EditUserData"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttonbackground"
+                    android:elevation="8dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Edit Profile"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:layout_marginBottom="10dp" />-->
+
+        <Button
+            android:id="@+id/btn_SaveUserData"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/buttonbackground"
+            android:elevation="8dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Save"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_marginBottom="10dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
