@@ -18,188 +18,198 @@
         app:title="Edit User Profile"
         app:titleTextColor="@color/white" />
 
-    <RelativeLayout
-        android:id="@+id/rl_ProfilePicture"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbarEditProfile"
-        android:padding="10dp">
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarEditProfile">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_ProfileImage_edit"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_launcher_background"
-            app:civ_border_color="@color/colorPrimary"
-            app:civ_border_width="5dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_ProfilePicture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_ProfileImage_edit"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_launcher_background"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="5dp" />
 
 
-        <!--        <ImageView
+                <!--        <ImageView
                     android:id="@+id/iv_ProfileImage"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_centerHorizontal="true"
                     app:srcCompat="@drawable/ic_launcher_background"
                     android:scaleType="centerCrop" />-->
-    </RelativeLayout>
+            </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/rl_ProfileDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_ProfilePicture"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/et_ProfileUserName_edit"
+            <LinearLayout
+                android:id="@+id/rl_ProfileDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:drawableStart="@drawable/ic_baseline_account_box_24"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorPrimary"
-                android:ems="10"
-                android:hint="User Name :"
-                android:inputType="textPersonName"
-                app:met_floatingLabel="highlight"
-                app:met_floatingLabelAlwaysShown="true"
-                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
-                app:met_floatingLabelTextSize="16sp" />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
 
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
 
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/et_ProfileFirstName_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:drawableStart="@drawable/ic_baseline_folder_shared_24"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorPrimary"
-                android:ems="10"
-                android:hint="First Name :"
-                android:inputType="textPersonName"
-                app:met_floatingLabel="highlight"
-                app:met_floatingLabelAlwaysShown="true"
-                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
-                app:met_floatingLabelTextSize="16sp" />
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/et_ProfileUserName_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:drawableStart="@drawable/ic_baseline_account_box_24"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/colorPrimary"
+                        android:ems="10"
+                        android:hint="User Name :"
+                        android:inputType="textPersonName"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="true"
+                        app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                        app:met_floatingLabelTextSize="16sp" />
 
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                </RelativeLayout>
 
-
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/et_ProfileLastName_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:drawableStart="@drawable/ic_baseline_folder_shared_24"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorPrimary"
-                android:ems="10"
-                android:hint="Last Name :"
-                android:inputType="textPersonName"
-                app:met_floatingLabel="highlight"
-                app:met_floatingLabelAlwaysShown="true"
-                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
-                app:met_floatingLabelTextSize="16sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/et_ProfileEmail_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:drawableStart="@drawable/ic_baseline_email_24"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorPrimary"
-                android:ems="10"
-                android:hint="Email :"
-                android:inputType="textEmailAddress"
-                app:met_floatingLabel="highlight"
-                app:met_floatingLabelAlwaysShown="true"
-                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
-                app:met_floatingLabelTextSize="16sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/et_ProfileMobileNo_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorPrimary"
-                android:ems="10"
-                android:hint="Mobile No :"
-                android:inputType="phone"
-                app:met_floatingLabel="highlight"
-                app:met_floatingLabelAlwaysShown="true"
-                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
-                app:met_floatingLabelTextSize="16sp"
-                app:met_maxCharacters="12" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
 
-        </RelativeLayout>
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/et_ProfileFirstName_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:drawableStart="@drawable/ic_baseline_folder_shared_24"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/colorPrimary"
+                        android:ems="10"
+                        android:hint="First Name :"
+                        android:inputType="textPersonName"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="true"
+                        app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                        app:met_floatingLabelTextSize="16sp" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                </RelativeLayout>
 
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/et_ProfileAddress_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:drawableStart="@drawable/ic_baseline_home_24"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/colorPrimary"
-                android:ems="10"
-                android:hint="Address :"
-                android:inputType="text|textPostalAddress"
-                app:met_floatingLabel="highlight"
-                app:met_floatingLabelAlwaysShown="true"
-                app:met_floatingLabelTextColor="@color/colorPrimaryDark"
-                app:met_floatingLabelTextSize="16sp" />
-
-
-            -->
-        </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
 
-        <!--<RelativeLayout
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/et_ProfileLastName_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:drawableStart="@drawable/ic_baseline_folder_shared_24"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/colorPrimary"
+                        android:ems="10"
+                        android:hint="Last Name :"
+                        android:inputType="textPersonName"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="true"
+                        app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                        app:met_floatingLabelTextSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/et_ProfileEmail_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:drawableStart="@drawable/ic_baseline_email_24"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/colorPrimary"
+                        android:ems="10"
+                        android:hint="Email :"
+                        android:inputType="textEmailAddress"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="true"
+                        app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                        app:met_floatingLabelTextSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/et_ProfileMobileNo_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/colorPrimary"
+                        android:ems="10"
+                        android:hint="Mobile No :"
+                        android:inputType="phone"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="true"
+                        app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                        app:met_floatingLabelTextSize="16sp"
+                        app:met_maxCharacters="12" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/et_ProfileAddress_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:drawableStart="@drawable/ic_baseline_home_24"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/colorPrimary"
+                        android:ems="10"
+                        android:hint="Address :"
+                        android:inputType="text|textPostalAddress"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="true"
+                        app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                        app:met_floatingLabelTextSize="16sp" />
+
+
+                    -->
+                </RelativeLayout>
+
+
+                <!--<RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -253,7 +263,7 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />&ndash;&gt;
         </RelativeLayout>-->
-        <!--<RelativeLayout
+                <!--<RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -297,34 +307,33 @@
                     &ndash;&gt;
         </RelativeLayout>-->
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/btns_edit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_ProfileDetails"
-        android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/btns_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
-        <Button
-            android:id="@+id/btn_ResetPassword"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/buttonbackground"
-            android:elevation="8dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="Reset Password"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:layout_marginBottom="10dp" />
+                <Button
+                    android:id="@+id/btn_ResetPassword"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttonbackground"
+                    android:elevation="8dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Reset Password"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:layout_marginBottom="10dp" />
 
-        <!--        <Button
+                <!--        <Button
                     android:id="@+id/btn_EditUserData"
                     android:layout_width="300dp"
                     android:layout_height="40dp"
@@ -341,23 +350,29 @@
                     android:textStyle="bold"
                     tools:layout_marginBottom="10dp" />-->
 
-        <Button
-            android:id="@+id/btn_SaveUserData"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/buttonbackground"
-            android:elevation="8dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="Save"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:layout_marginBottom="10dp" />
+                <Button
+                    android:id="@+id/btn_SaveUserData"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttonbackground"
+                    android:elevation="8dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Save"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:layout_marginBottom="10dp" />
 
-    </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

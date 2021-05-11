@@ -115,15 +115,37 @@
 
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/cart_fragment_recyclerView"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/design_default_color_on_primary"
-            android:padding="16dp"
-            android:scrollbars="vertical" >
+            android:background="@color/white">
 
-        </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/tv_cart_is_empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Your Cart is Empty"
+                android:textAlignment="center"
+                android:textColor="@color/colorThirdLight"
+                android:textSize="30sp"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cart_fragment_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/design_default_color_on_primary"
+                android:padding="16dp"
+                android:scrollbars="vertical"
+                >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </FrameLayout>
+
+
 
     </LinearLayout>
 </RelativeLayout>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckoutActivity"
+    android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_checkout_screen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:navigationIcon="@drawable/arrow_left"
+            app:title="Go Back"
+            app:titleTextColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/ll_delivery_info_ets"
+            android:gravity="center"
+            >
+
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Please enter delivery details"
+                android:textAlignment="center"
+                android:textColor="@color/colorThird"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:background="@drawable/buttonbackground"
+                android:backgroundTint="@color/colorThirdLight"
+                android:backgroundTintMode="add"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="5dp"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_delivery_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="Name using for Communication" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="5dp"
+                android:gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:backgroundTint="@color/colorThirdLight"
+                android:backgroundTintMode="add">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contact Number"
+                    android:layout_marginHorizontal="20dp"
+                    android:id="@+id/et_delivery_telephone"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="5dp"
+                android:gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:backgroundTint="@color/colorThirdLight"
+                android:backgroundTintMode="add">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Delivery Address"
+                    android:layout_marginHorizontal="20dp"
+                    android:id="@+id/et_delivery_address"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/buttonbackground"
+                android:backgroundTint="@color/colorThirdLight"
+                android:backgroundTintMode="add"
+                android:gravity="center"
+                android:paddingTop="5dp"
+
+                app:counterEnabled="true"
+                app:counterMaxLength="200"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_delivery_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="Delivery Notes (If any)"
+                    android:inputType="textMultiLine"
+                    android:maxLength="200" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_check_out_confirm_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:background="@drawable/buttonbackground"
+                android:text="Confirm Order"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/ll_order_being_processed_tvs"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_checkout_being_processed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Order is being processed"
+                android:textColor="@color/colorSecondaryDark"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_checkout_please_wait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Please Wait"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/pb_checkout_wait_progress_bar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/ll_order_complete_tvs"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_checkout_being_processed_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Order is being processed"
+                android:textColor="@color/colorSecondaryDark"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_checkout_order_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Order Complete !"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                 />
+
+            <TextView
+                android:id="@+id/tv_checkout_order_complete_additional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Thank you for using Govi Mart"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

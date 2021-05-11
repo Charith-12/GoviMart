@@ -19,6 +19,7 @@ import java.text.NumberFormat;
 //
 public class SalePostAdapter extends FirestoreRecyclerAdapter<SalePost, SalePostAdapter.SalePostHolder> {
     private OnItemClickListener listener;
+    private SalePostAdapter.OnAdapterCountListener onAdapterCountListener;
 
 
     public SalePostAdapter(@NonNull FirestoreRecyclerOptions<SalePost> options) {
@@ -62,6 +63,7 @@ public class SalePostAdapter extends FirestoreRecyclerAdapter<SalePost, SalePost
 
 
     }
+
     @NonNull
     @Override
     public SalePostHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -119,12 +121,32 @@ public class SalePostAdapter extends FirestoreRecyclerAdapter<SalePost, SalePost
             });
         }
     }
+
     public interface OnItemClickListener {
         void onItemClick(DocumentSnapshot documentSnapshot, int position);
     }
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
+
+    //
+    public interface OnAdapterCountListener {
+        void onAdapterCountListener(int count);
+    }
+
+    //private OnAdapterCountListener onAdapterCountListener;
+    public void setOnAdapterCountListener(SalePostAdapter.OnAdapterCountListener l) {
+        onAdapterCountListener = l;
+    }
+    //
+
+    @Override
+    public void onDataChanged() {
+        super.onDataChanged();
+        //itmCount = this.getItemCount();
+        onAdapterCountListener.onAdapterCountListener(getItemCount());
+    }
+
 }
 //
 

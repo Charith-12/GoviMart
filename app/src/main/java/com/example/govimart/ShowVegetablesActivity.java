@@ -2,6 +2,7 @@ package com.example.govimart;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +22,8 @@ public class ShowVegetablesActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference postsRef = db.collection("Posts");
     private SalePostAdapter adapter;
-    private TextView categoryTitleBarTv;
+    private TextView categoryTitleBarTv, noItemsTv;
+    private RecyclerView showPostsRecyclerViewView;
     private String selectedCategory;
 
 
@@ -31,6 +33,8 @@ public class ShowVegetablesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_vegetables);
 
         categoryTitleBarTv = (TextView) findViewById(R.id.tv_category_title_bar);
+        noItemsTv = (TextView) findViewById(R.id.tv_show_vegetables_no_items);
+        showPostsRecyclerViewView = (RecyclerView) findViewById(R.id.vegetablesRecyclerView);
 
         Intent initialIntent = getIntent();
         selectedCategory = initialIntent.getStringExtra("CATEGORY_ON_CARD");
@@ -61,6 +65,25 @@ public class ShowVegetablesActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+
+        // To handle Empty RecyclerView
+        adapter.setOnAdapterCountListener(new SalePostAdapter.OnAdapterCountListener() {
+            @Override
+            public void onAdapterCountListener(int count) {
+                if (count > 0){
+                    //adapterEmptyText.setVisibility(View.GONE);
+                    noItemsTv.setVisibility(View.GONE);
+                    showPostsRecyclerViewView.setVisibility(View.VISIBLE);
+                }else {
+                    noItemsTv.setVisibility(View.VISIBLE);
+                    showPostsRecyclerViewView.setVisibility(View.GONE);
+                }
+
+            }
+        });
+        //
+
 
         // If we want to implement Swipe to delete(Only the Firestore records here)
         /*

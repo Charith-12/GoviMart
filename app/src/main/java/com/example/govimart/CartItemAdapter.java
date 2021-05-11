@@ -3,6 +3,7 @@ package com.example.govimart;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.firebase.ui.firestore.paging.LoadingState;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.squareup.picasso.Picasso;
 
@@ -21,6 +23,8 @@ public class CartItemAdapter extends FirestoreRecyclerAdapter<CartItem, CartItem
 
     //
     private CartItemAdapter.OnItemClickListener listener;
+    private CartItemAdapter.OnAdapterCountListener onAdapterCountListener;
+    private int itmCount = 0;
 
 
     public CartItemAdapter(@NonNull FirestoreRecyclerOptions<CartItem> options) {
@@ -41,7 +45,6 @@ public class CartItemAdapter extends FirestoreRecyclerAdapter<CartItem, CartItem
         holder.tvCartItemQuantity.append(" "+ NumberFormat.getNumberInstance().format(model.getCartItemQuantity()));
         holder.tvCartItemTotalPrice.append(" "+ NumberFormat.getNumberInstance().format(model.getCartItemTotalPrice()));
 
-
         //FirebaseStorage storage = FirebaseStorage.getInstance();
         // StorageReference gsReference = storage.getReferenceFromUrl(model.getPImageUrl());
         // String imageUrl = String.valueOf(gsReference.getDownloadUrl());
@@ -60,11 +63,15 @@ public class CartItemAdapter extends FirestoreRecyclerAdapter<CartItem, CartItem
 
 
     }
+
     @NonNull
     @Override
     public CartItemAdapter.CartItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item_card,
                 parent, false);
+        //
+        //onAdapterCountListener.onAdapterCountListener(getItemCount());
+        //
         return new CartItemAdapter.CartItemHolder(v);
     }
 
@@ -105,6 +112,7 @@ public class CartItemAdapter extends FirestoreRecyclerAdapter<CartItem, CartItem
             });
         }
     }
+
     public interface OnItemClickListener {
         void onItemClick(DocumentSnapshot documentSnapshot, int position);
     }
@@ -113,5 +121,29 @@ public class CartItemAdapter extends FirestoreRecyclerAdapter<CartItem, CartItem
     }
     //
 
+    public interface OnAdapterCountListener {
+        void onAdapterCountListener(int count);
+    }
+
+    //private OnAdapterCountListener onAdapterCountListener;
+    public void setOnAdapterCountListener(OnAdapterCountListener l) {
+        onAdapterCountListener = l;
+    }
+
+    //
+
+    /*
+    public int getItmCount() {
+        return this.itmCount;
+    }
+
+     */
+
+    @Override
+    public void onDataChanged() {
+        super.onDataChanged();
+        //itmCount = this.getItemCount();
+        onAdapterCountListener.onAdapterCountListener(getItemCount());
+    }
 
 }

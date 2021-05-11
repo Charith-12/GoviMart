@@ -16,9 +16,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true">
 
-
-
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
@@ -37,7 +34,7 @@
         android:layout_below="@id/rl_Login_Image"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:paddingBottom="20dp">
+        android:paddingBottom="10dp">
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -65,7 +62,6 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
             android:drawableStart="@drawable/ic_https_black_24dp"
             android:drawablePadding="10dp"
             android:drawableTint="@color/colorPrimary"
@@ -77,27 +73,27 @@
 
 
     </RelativeLayout>
-
     <RelativeLayout
         android:id="@+id/rl_Login_Extras"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/rl_LoginInput"
-        android:paddingBottom="10dp">
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:paddingBottom="15dp">
 
         <CheckBox
             android:id="@+id/cb_RememberMe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:text="Remember me"
             android:textAlignment="viewStart"
             android:textColor="@color/colorThird"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"/>
 
         <TextView
             android:id="@+id/tv_ForgotPassword"
@@ -106,7 +102,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+
             android:layout_marginRight="20dp"
             android:layout_toRightOf="@id/cb_RememberMe"
             android:paddingTop="5dp"
@@ -124,21 +120,20 @@
         android:id="@+id/rl_Login_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ll_NewAccount"
         android:layout_below="@id/rl_Login_Extras"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="86dp"
-        android:paddingBottom="30dp">
+        android:layout_centerVertical="true"
+        android:layout_above="@id/ll_login_lowest_section">
 
 
         <Button
             android:id="@+id/btn_LogIn"
             android:layout_width="300dp"
-            android:layout_height="56dp"
+            android:layout_height="54dp"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
+            android:layout_marginTop="2dp"
             android:background="@drawable/buttonbackground"
             android:drawableRight="@drawable/right_arrow_right"
             android:outlineAmbientShadowColor="#221E1E"
@@ -155,9 +150,9 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/ll_NewAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/ll_login_lowest_section"
         android:background="@android:color/background_light"
         android:gravity="center"
         android:orientation="vertical"
@@ -169,7 +164,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="1dp"
             android:layout_marginRight="20dp"
             android:text="Don't have a Account?"
             android:textAlignment="center"
@@ -181,9 +176,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="8dp"
             android:clickable="true"
             android:text="Create a new Account"
             android:textAlignment="center"

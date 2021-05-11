@@ -24,7 +24,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -42,10 +44,12 @@ public class CartTabFragment extends Fragment {
     private CollectionReference usersRef = db.collection("Users");
     private CartItemAdapter adapter;
     Button getTotalBtn, checkOutBtn;
-    TextView cartTotalTv;
+    TextView cartTotalTv, cartIsEmptyTv;
+    RecyclerView cartRecyclerViewView;
     private View view;
 
     double shoppingCartTotalValue;
+    int cartItemCount;
 
     @Nullable
     @Override
@@ -74,13 +78,29 @@ public class CartTabFragment extends Fragment {
         // prev -> // return inflater.inflate(R.layout.categories_fragment_layout,container,false);
         //View view = inflater.inflate(R.layout.categories_fragment_layout,container,false);
         cartTotalTv = (TextView) view.findViewById(R.id.tv_cart_total);
+        cartIsEmptyTv = (TextView) view.findViewById(R.id.tv_cart_is_empty);
+        cartRecyclerViewView = (RecyclerView) view.findViewById(R.id.cart_fragment_recyclerView);
+
         checkOutBtn = (Button) view.findViewById(R.id.btn_cart_check_out);
         getTotalBtn = (Button) view.findViewById(R.id.btn_cart_view_total);
 
         checkOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "CHECKOUT BUTTON CLICKED",Toast.LENGTH_SHORT).show();
+
+                if(cartItemCount == 0){
+                    //Toast.makeText(getActivity(), "CHECKOUT BUTTON CLICKED",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Your Cart is Empty!",Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getActivity(), "CHECKOUT BUTTON CLICKED",Toast.LENGTH_SHORT).show();
+                    cartTotalTv.setVisibility(View.GONE);
+                    getTotalBtn.setVisibility(View.VISIBLE);
+                    cartTotalTv.setText("Calculating...");
+                    Intent intent = new Intent(getContext(), CheckoutActivity.class);
+                    startActivity(intent);
+
+                }
+
 
             }
         });
@@ -107,6 +127,8 @@ public class CartTabFragment extends Fragment {
         ///
 
 
+
+
         return view;
 
     }
@@ -122,11 +144,33 @@ public class CartTabFragment extends Fragment {
                 .build();
         adapter = new CartItemAdapter(options);
         adapter.startListening();
+
         adapter.setStateRestorationPolicy(RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.cart_fragment_recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+        //cartItemCount = adapter.getItmCount();
+
+        // To handle Empty Cart
+        adapter.setOnAdapterCountListener(new CartItemAdapter.OnAdapterCountListener() {
+            @Override
+            public void onAdapterCountListener(int count) {
+                if (count > 0){
+                    //adapterEmptyText.setVisibility(View.GONE);
+                    cartItemCount = 1;
+                    cartIsEmptyTv.setVisibility(View.GONE);
+                    cartRecyclerViewView.setVisibility(View.VISIBLE);
+                }else {
+                    cartItemCount =0;
+                    cartIsEmptyTv.setVisibility(View.VISIBLE);
+                    cartRecyclerViewView.setVisibility(View.GONE);
+                }
+
+            }
+        });
+        //
+
 
 
         // Swipe to delete feature
@@ -148,7 +192,7 @@ public class CartTabFragment extends Fragment {
         }).attachToRecyclerView(recyclerView);
 
 
-
+        // On Cart Item click
         adapter.setOnItemClickListener(new CartItemAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
@@ -246,5 +290,7 @@ public class CartTabFragment extends Fragment {
 
 
     }
+
+
 
 }

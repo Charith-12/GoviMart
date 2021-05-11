@@ -11,7 +11,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Buyer_and_TransporterMainActivityHome"></activity>
+        <activity android:name=".NotificationExpanded"></activity>
+        <activity android:name=".CheckoutActivity" />
+        <activity android:name=".Buyer_and_TransporterMainActivityHome" />
         <activity android:name=".Seller_and_TransporterMainActivityHome" />
         <activity android:name=".RedirectActivity" />
         <activity android:name=".BuyerMainActivityHome" />

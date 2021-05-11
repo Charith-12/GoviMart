@@ -16,7 +16,7 @@
         android:theme="?attr/actionBarTheme"
         app:navigationIcon="@drawable/arrow_left"
         app:title="User Profile"
-        app:titleTextColor="@color/white"/>
+        app:titleTextColor="@color/white" />
 
     <TextView
         android:id="@+id/tv_ProfileRole"
@@ -60,179 +60,186 @@
                     android:scaleType="centerCrop" />-->
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/rl_ProfileDetails"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_ProfilePicture"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_ProfilePicture">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="5dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_ProfileUserName"
+            <LinearLayout
+                android:id="@+id/rl_ProfileDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_account_box_24"
-                android:drawablePadding="10dp"
-                android:padding="10dp"
-                android:text="User Name :"
-                android:textAlignment="textStart"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_ProfileUserNameText"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_ProfileUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_account_box_24"
+                        android:drawablePadding="10dp"
+                        android:padding="10dp"
+                        android:text="User Name :"
+                        android:textAlignment="textStart"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_ProfileUserNameText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_ProfileUserName"
+                        android:layout_marginLeft="60dp"
+                        android:text="User Name"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_ProfileEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_email_24"
+                        android:drawablePadding="10dp"
+                        android:padding="10dp"
+                        android:text="Email :"
+                        android:textAlignment="textStart"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_ProfileUserEmailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_ProfileEmail"
+                        android:layout_marginLeft="60dp"
+                        android:text="email"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_ProfileMobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
+                        android:drawablePadding="10dp"
+                        android:padding="10dp"
+                        android:text="Mobile No :"
+                        android:textAlignment="textStart"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_ProfileUserMobileNoText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_ProfileMobileNo"
+                        android:layout_marginLeft="60dp"
+                        android:text="mobile"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_ProfileAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_home_24"
+                        android:drawablePadding="10dp"
+                        android:padding="10dp"
+                        android:text="Address :"
+                        android:textAlignment="textStart"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_ProfileAddressText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_ProfileAddress"
+                        android:layout_marginLeft="60dp"
+                        android:text="You didn't add a Address"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_ProfileGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_emoji_people_24"
+                        android:drawablePadding="10dp"
+                        android:padding="10dp"
+                        android:text="Gender :"
+                        android:textAlignment="textStart"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_ProfileUserGenderText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_ProfileGender"
+                        android:layout_marginLeft="60dp"
+                        android:text="Gender"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btns"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_ProfileUserName"
-                android:layout_marginLeft="60dp"
-                android:text="User Name"
-                android:textAlignment="textStart"
-                android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <TextView
-                android:id="@+id/tv_ProfileEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_email_24"
-                android:drawablePadding="10dp"
-                android:padding="10dp"
-                android:text="Email :"
-                android:textAlignment="textStart"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_ProfileUserEmailText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_ProfileEmail"
-                android:layout_marginLeft="60dp"
-                android:text="email"
-                android:textAlignment="textStart"
-                android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <TextView
-                android:id="@+id/tv_ProfileMobileNo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_phone_iphone_24"
-                android:drawablePadding="10dp"
-                android:padding="10dp"
-                android:text="Mobile No :"
-                android:textAlignment="textStart"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_ProfileUserMobileNoText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_ProfileMobileNo"
-                android:layout_marginLeft="60dp"
-                android:text="mobile"
-                android:textAlignment="textStart"
-                android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <TextView
-                android:id="@+id/tv_ProfileAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_home_24"
-                android:drawablePadding="10dp"
-                android:padding="10dp"
-                android:text="Address :"
-                android:textAlignment="textStart"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_ProfileAddressText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_ProfileAddress"
-                android:layout_marginLeft="60dp"
-                android:text="You didn't add a Address"
-                android:textAlignment="textStart"
-                android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <TextView
-                android:id="@+id/tv_ProfileGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_emoji_people_24"
-                android:drawablePadding="10dp"
-                android:padding="10dp"
-                android:text="Gender :"
-                android:textAlignment="textStart"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_ProfileUserGenderText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_ProfileGender"
-                android:layout_marginLeft="60dp"
-                android:text="Gender"
-                android:textAlignment="textStart"
-                android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/btns"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_ProfileDetails"
-        android:orientation="vertical">
+                android:orientation="vertical">
 
 
-
-        <!--        <Button
+                <!--        <Button
                     android:id="@+id/btn_ResetPassword"
                     android:layout_width="300dp"
                     android:layout_height="40dp"
@@ -249,40 +256,46 @@
                     android:textStyle="bold"
                     tools:layout_marginBottom="10dp" />-->
 
-        <Button
-            android:id="@+id/btn_EditUserData"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/buttonbackground"
-            android:elevation="8dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="Edit Profile"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:layout_marginBottom="10dp" />
+                <Button
+                    android:id="@+id/btn_EditUserData"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttonbackground"
+                    android:elevation="8dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Edit Profile"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:layout_marginBottom="10dp" />
 
-        <Button
-            android:id="@+id/btn_LogOut"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/buttonbackground"
-            android:elevation="8dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="LOG OUT"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:layout_marginBottom="10dp" />
+                <Button
+                    android:id="@+id/btn_LogOut"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttonbackground"
+                    android:elevation="8dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="LOG OUT"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:layout_marginBottom="10dp" />
 
-    </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
